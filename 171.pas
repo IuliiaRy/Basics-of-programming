@@ -34,6 +34,6 @@ BEGIN
       AddNum := AddNum + Digit;
       ReadDigit(INPUT, Digit)
     END;
-  WRITELN('Сумма цифр: ', AddNum)
+  WRITELN('РЎСѓРјРјР° С†РёС„СЂ: ', AddNum)
 END.
     
