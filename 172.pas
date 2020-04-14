@@ -54,8 +54,8 @@ BEGIN
   ReadNumber(INPUT, Number);
   IF Number <> -1
   THEN
-    WRITELN('Ваше число: ', Number)
+    WRITELN('Р’Р°С€Рµ С‡РёСЃР»Рѕ: ', Number)
   ELSE
-    WRITELN('Переполнение MAXINT')
+    WRITELN('РџРµСЂРµРїРѕР»РЅРµРЅРёРµ MAXINT')
 END.
     
