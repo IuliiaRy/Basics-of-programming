@@ -1,7 +1,6 @@
 PROGRAM EchoReadNumber(INPUT, OUTPUT);
 VAR
   Number: INTEGER;
-
 PROCEDURE ReadDigit(VAR F: TEXT; VAR D: INTEGER);
 VAR
   Ch: CHAR;
@@ -25,7 +24,6 @@ BEGIN
   ELSE
     D := -1
 END;
-
 PROCEDURE ReadNumber(VAR F: TEXT; VAR N: INTEGER);
 VAR
   Digit: INTEGER;
@@ -43,13 +41,11 @@ BEGIN
         END
       ELSE
         BEGIN
-          N := N*10 + Digit;
+          N := N * 10 + Digit;
           ReadDigit(F, Digit)
         END
     END
 END;
-
-
 BEGIN
   ReadNumber(INPUT, Number);
   IF Number <> -1
@@ -58,4 +54,3 @@ BEGIN
   ELSE
     WRITELN('Переполнение MAXINT')
 END.
-    
