@@ -1,6 +1,6 @@
 PROGRAM SumDigit(INPUT, OUTPUT);
 VAR
-  AddNum, Digit: INTEGER;
+  Sum, Digit: INTEGER;
 PROCEDURE ReadDigit(VAR F: TEXT; VAR D: INTEGER);
 VAR
   Ch: CHAR;
@@ -26,14 +26,13 @@ BEGIN
 END;
 BEGIN
   Digit := 0;
-  AddNum := 0;
+  Sum := 0;
   ReadDigit(INPUT, Digit);               
   WHILE (Digit <> -1)
   DO
     BEGIN
-      AddNum := AddNum + Digit;
+      Sum := Sum + Digit;
       ReadDigit(INPUT, Digit)
     END;
-  WRITELN('Сумма цифр: ', AddNum)
+  WRITELN('Сумма цифр: ', Sum)
 END.
-    
