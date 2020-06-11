@@ -25,7 +25,7 @@ BEGIN {InsertionSort}
       THEN
         BEGIN
           READ(Extra);
-          WRITELN('Сообщение содержит: ', Extra, '. Игнорируем.');
+          WRITELN('Г‘Г®Г®ГЎГ№ГҐГ­ГЁГҐ Г±Г®Г¤ГҐГ°Г¦ГЁГІ: ', Extra, '. Г€ГЈГ­Г®Г°ГЁГ°ГіГҐГ¬.');
         END
       ELSE
         BEGIN
@@ -58,7 +58,7 @@ BEGIN {InsertionSort}
         WRITE(Arr[Index].Key);  
         Index := Arr[Index].Next
       END;
-  WRITELN;
+  WRITELN
 END.  {InsertionSort}
  
 
