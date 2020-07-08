@@ -43,7 +43,7 @@ END;
 BEGIN
   SetOfNumbers := [Min .. Max];
   FinderSimpleNumbers(SetOfNumbers);
-  WRITE('Множество простых чисел от ', Min , ' до ', Max , ': ');
+  WRITE('РњРЅРѕР¶РµСЃС‚РІРѕ РїСЂРѕСЃС‚С‹С… С‡РёСЃРµР» РѕС‚ ', Min , ' РґРѕ ', Max , ': ');
   WriteSet(SetOfNumbers);
 END.
 
