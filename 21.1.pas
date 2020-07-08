@@ -37,7 +37,7 @@ BEGIN
   Code['X'] := 'C';
   Code['Y'] := 'B';
   Code['Z'] := 'A';
-  Code[' '] := '#';
+  Code[' '] := '$';
 END;
 
 PROCEDURE Encode(VAR S: Str; LengthString: INTEGER);
