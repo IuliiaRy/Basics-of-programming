@@ -6,12 +6,12 @@ TYPE
   SetMinMax = SET OF Min .. Max;
 VAR
   SetOfNumbers: SetMinMax;
-PROCEDURE FinderSimpleNumbers(VAR SetOfNumb: SetMinMax);
+PROCEDURE SeiveSimpleNumbers(VAR SetOfNumb: SetMinMax);
 VAR
   NextNumb, CurrentNumb: INTEGER;
 BEGIN
   NextNumb := Min;
-  WHILE NextNumb <> SQRT(Max)
+  WHILE NextNumb < SQRT(Max)
   DO
     BEGIN
       CurrentNumb := NextNumb;
@@ -30,7 +30,7 @@ VAR
   CurrentNumb: INTEGER;
 BEGIN
   CurrentNumb := Min;
-  WHILE CurrentNumb <> Max
+  WHILE CurrentNumb <= Max
   DO
     BEGIN
       IF CurrentNumb IN SetOfNumb
@@ -42,7 +42,7 @@ END;
 
 BEGIN
   SetOfNumbers := [Min .. Max];
-  FinderSimpleNumbers(SetOfNumbers);
+  SeiveSimpleNumbers(SetOfNumbers);
   WRITE('Множество простых чисел от ', Min , ' до ', Max , ': ');
   WriteSet(SetOfNumbers);
 END.
