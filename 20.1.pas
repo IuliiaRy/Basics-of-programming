@@ -1,15 +1,15 @@
 PROGRAM XPrint(INPUT, OUTPUT);
 CONST
-  Letter = 'a';
+  Letter = 'X';
   SetBegin = 1;
   SetEnd = 25;
 TYPE
-  SymPlace = SET OF SetBegin .. SetEnd;
+  SymbolPlace = SET OF SetBegin .. SetEnd;
 VAR
   Ch: CHAR;
-PROCEDURE DefiningOfSet(VAR Ch: CHAR; VAR M: SymPlace; VAR NotSym: BOOLEAN);
-{Определяет множество для символа}
-BEGIN{DefiningOfSet}
+
+PROCEDURE GetMatrixOfSymbol(VAR Ch: CHAR; VAR M: SymbolPlace; VAR NotSymbol: BOOLEAN);
+BEGIN
   CASE Ch OF 
     '0': M := [1, 2, 3, 4, 5, 6, 10, 11, 15, 16, 20, 21, 22, 23, 24, 25];
     '1': M := [4, 5, 8, 10, 15, 20, 25];
@@ -22,43 +22,44 @@ BEGIN{DefiningOfSet}
     '8': M := [1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 20, 21, 22, 23, 24, 25];  
     '9': M := [1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 20, 21, 22, 23, 24, 25];
   ELSE
-    NotSym := TRUE 
-  END;
-END;{DefiningOfSet}
-PROCEDURE GraphicPrinting(VAR Ch: CHAR; VAR F: TEXT);
-{Преобразует строку цифр из файла в графический вид}
+    NotSymbol := TRUE
+  END
+END;
+
+PROCEDURE PrintSymbol(VAR Ch: CHAR; VAR F: TEXT);
 VAR 
-  NumPlace: SymPlace;
-  NotSym: BOOLEAN;
-  i: INTEGER;
-BEGIN{GraphicPrinting}
-  NotSym := FALSE;
-  DefiningOfSet(Ch, NumPlace, NotSym);
-  IF (NotSym = FALSE)
+  MatrixOfSymbol: SymbolPlace;
+  NotSymbol: BOOLEAN;
+  CurrentPlace: INTEGER;
+BEGIN
+  NotSymbol := FALSE;
+  GetMatrixOfSymbol(Ch, MatrixOfSymbol, NotSymbol);
+  IF (NotSymbol = FALSE)
   THEN
     BEGIN
-      FOR i := SetBegin TO SetEnd
+      FOR CurrentPlace := SetBegin TO SetEnd
       DO
         BEGIN
-          IF( i IN NumPlace)
+          IF (CurrentPlace IN MatrixOfSymbol)
           THEN
-            WRITE(Letter)
+            WRITE(F, Letter)
           ELSE
-            WRITE(' ');
-          IF (i MOD 5 = 0)
+            WRITE(F, ' ');
+          IF (CurrentPlace MOD 5 = 0)
           THEN
-            WRITELN
+            WRITELN(F)
         END
     END
-    ELSE
-      WRITELN('Ваш символ некорректный');
-END;{GraphicPrinting}
-BEGIN{XPrint}
+  ELSE
+    WRITELN(F, 'Р’Р°С€ СЃРёРјРІРѕР» РЅРµРєРѕСЂСЂРµРєС‚РЅС‹Р№')
+END;
+
+BEGIN
   WHILE NOT EOLN
   DO
     BEGIN
       WRITELN;
       READ(INPUT, Ch);   
-      GraphicPrinting(Ch, OUTPUT)
+      PrintSymbol(Ch, OUTPUT)
     END
-END.{XPrint}
+END.
