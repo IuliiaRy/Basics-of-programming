@@ -25,7 +25,7 @@ BEGIN {InsertionSort}
       THEN
         BEGIN
           READ(Extra);
-          WRITELN('Ñîîáùåíèå ñîäåðæèò: ', Extra, '. Èãíîðèðóåì.');
+          WRITELN('Сообщение содержит: ', Extra, '. Игнорируем.');
         END
       ELSE
         BEGIN
